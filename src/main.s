@@ -7,8 +7,17 @@ palettes:
 
 sprites:
 ;     Y    Tile Attr X
-.byte $70, $02, $00, $80
-.byte $70, $04, $00, $88
+.byte $68, $04, $00, $40 ; H
+.byte $68, $05, $00, $48 ; E
+.byte $68, $06, $00, $50 ; L
+.byte $68, $06, $00, $58 ; L
+.byte $68, $07, $00, $60 ; O
+.byte $70, $08, $00, $70 ; C
+.byte $70, $09, $00, $78 ; S
+.byte $78, $08, $00, $88 ; C
+.byte $78, $06, $00, $90 ; L
+.byte $78, $0a, $00, $98 ; U
+.byte $78, $0b, $00, $a0 ; B
 
 .segment "CODE"
 .proc irq_handler
@@ -61,7 +70,7 @@ load_sprites:
   LDA sprites,X
   STA $0200,X
   INX
-  CPX #$08
+  CPX #$64
   BNE load_sprites
 forever:
   JMP forever
