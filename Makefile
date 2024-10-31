@@ -3,7 +3,7 @@ LD := ld65
 
 TARGET := game.nes
 FLAGS := -C nes.cfg -o $(TARGET)
-EMULATOR := /Applications/fceux.app/Contents/MacOS/fceux
+EMULATOR := fceux
 
 .PHONY: all
 
